@@ -8,17 +8,10 @@ class App extends Component {
   render() {
     return (
       <div>
-<<<<<<< HEAD
-        <Jumbotron>
+       <Jumbotron>
           <h1>Parcel</h1>
           <p>ship more for less</p>
         </Jumbotron>
-=======
-      <Jumbotron>
-        <h1>Parcel</h1>
-        <p>ship more for less</p>
-      </Jumbotron>
->>>>>>> 6652e81ef59612584eac403110b86434b3ac10ba
       </div>
     )
   }  
