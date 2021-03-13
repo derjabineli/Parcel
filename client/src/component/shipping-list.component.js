@@ -18,7 +18,7 @@ export default class ParcelList extends Component {
 
     this.deleteParcel = this.deleteParcel.bind(this)
 
-    this.state = {Parcels}: []};
+    // this.state = {Parcels} : {[]};
   }
 
   componentDidMount() {
@@ -28,13 +28,13 @@ export default class ParcelList extends Component {
         this.setState({ parcels: response.data })
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error)
       })
   }
 
   deleteparcel(id) {
     axios.delete('http://localhost:3001/parcels/'+id)
-      .then(response => { console.log(response.data)});
+      .then(response => { console.log(response.data)})
 
     this.setState({
       Parcels: this.state.parcel.filter(el => el._id !== id)
