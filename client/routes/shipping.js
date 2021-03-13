@@ -1,5 +1,4 @@
-var express = require("express");
-var router = express.Router();
+const router = express.Router();
 const axios = require("axios");
 
 // Get carriers listing.
