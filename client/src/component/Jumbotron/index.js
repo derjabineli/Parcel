@@ -6,13 +6,14 @@ function Jumbotron({ children }) {
       style={{ height: 100,
          clear: "both",
          paddingTop: 20,
-         backgroundColor:"gray" ,
+         backgroundColor:"gray",
          textAlign: "float left" }}
          className="jumbotron" 
     >
       {children}
     </div>
   );
+
 }
 
 export default Jumbotron;
