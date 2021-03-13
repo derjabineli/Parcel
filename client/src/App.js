@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Jumbotron from "./component/Jumbotron";
+import {Col, Row, Container} from "./component/Grid";
 
 
 class App extends Component {
@@ -12,6 +13,13 @@ class App extends Component {
           <h1>Parcel</h1>
           <p>ship more for less</p>
         </Jumbotron>
+        <Container>
+          <Row size="4" >
+            <Col size="md-12">
+              <header> Package expected:</header>
+            </Col>
+          </Row>
+        </Container>
       </div>
     )
   }  
