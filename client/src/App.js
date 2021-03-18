@@ -18,7 +18,7 @@ function App() {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-    <Image src={Hero} fluid/>
+    <Image src={Hero} fluid style={{ width: '100%'}}/>
     <Container>
       <h1 style={{ color: 'black' }}>Package Info:</h1>
       <Row>
@@ -50,7 +50,7 @@ function App() {
         </Col>
         <Col sm={4}>
           <Container>
-            <img src={measure} fluid style={{ width: '200px', height: 'auto', alignItems: 'center' }}/>
+            <img src={measure} fluid style={{ width: '200px', height: '100%', float: 'center' }}/>
           </Container>
         </Col>
       </Row>
