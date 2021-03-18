@@ -2,26 +2,26 @@
 import React, { Component } from "react";
 import "./App.css";
 // <<<<<<< HEAD
-import {Button, Navbar, Nav, NavDropdown, Form, FormControl, Row, Col, Image, Container} from 'react-bootstrap'
-import Hero from './hero.png'
+import {Button, Navbar, Nav, Form, Row, Col, Image, Container} from 'react-bootstrap'
+// import boxes from './boxes.png'
 import logo from './ARLOR.png'
 import measure from './measure.png'
 
 function App() {
   return (
     <>
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" >
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <img src={logo} fluid/>
-          <Nav.Link href="#home">Parcel</Nav.Link>
+          <Image src={logo} fluid style={{ height: '75px'}}/>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-    <Image src={Hero} fluid style={{ width: '100%'}}/>
+    <br></br>
+    {/* <Image src={boxes}  fluid style={{ width: '100%', height:'100%'}}/> */}
     <Container>
-      <h1 style={{ color: 'black' }}>Package Info:</h1>
+      <h1>Package Info:</h1>
       <Row>
         <Col sm={8}>
           <Form>
@@ -51,7 +51,7 @@ function App() {
         </Col>
         <Col sm={4}>
           <Container>
-            <img src={measure} fluid style={{ width: '200px', height: '100%', float: 'center' }}/>
+            <Image src={measure} alt="a picture" fluid style={{ width: '200px', height: '100%', float: 'center' }}/>
           </Container>
         </Col>
       </Row>
@@ -61,7 +61,7 @@ function App() {
         <Col>
           <Form>
             <Form.Group controlId="formGridAddress1">
-              <h1 style={{ color: 'black' }}>From:</h1>
+              <h1>From:</h1>
               <Form.Label>Address</Form.Label>
               <Form.Control placeholder="1234 Main St" />
             </Form.Group>
@@ -144,7 +144,7 @@ function App() {
         <Col>
           <Form>
             <Form.Group controlId="formGridAddress1">
-            <h1 style={{ color: 'black' }}>To:</h1>
+            <h1>To:</h1>
               <Form.Label>Address</Form.Label>
               <Form.Control placeholder="1234 Main St" />
             </Form.Group>
@@ -225,9 +225,7 @@ function App() {
           </Form>
         </Col>
       </Row>
-      <Button variant="primary" type="submit">
-              Submit
-            </Button>
+      <Button variant="primary" type="submit">  Submit </Button>
     </Container>
   
     </>
