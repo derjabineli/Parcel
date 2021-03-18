@@ -22,7 +22,7 @@ export default class ParcelList extends Component {
   }
 
   componentDidMount() {
-      //
+      //after3001//
     axios.get('http://localhost:3001/')
       .then(response => {
         this.setState({ parcels: response.data })
@@ -47,25 +47,25 @@ export default class ParcelList extends Component {
     })
   }
 
-  render() {
-    return (
-      <div>
-        <h3>Logged parcels</h3>
-        <table className="table">
-          <thead className="thead-light">
-            <tr>
-              <th>Username</th>
-              <th>Description</th>
-              <th>Duration</th>
-              <th>Date</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            { this.parcelList() }
-          </tbody>
-        </table>
-      </div>
-    )
-  }
+//   render() {
+//     return (
+//       <div>
+//         <h3>Logged parcels</h3>
+//         <table className="table">
+//           <thead className="thead-light">
+//             <tr>
+//               <th>Username</th>
+//               <th>Description</th>
+//               <th>Duration</th>
+//               <th>Date</th>
+//               <th>Actions</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             { this.parcelList() }
+//           </tbody>
+//         </table>
+//       </div>
+//     )
+//   }
 }

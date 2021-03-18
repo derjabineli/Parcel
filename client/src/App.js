@@ -1,6 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from "react";
 import "./App.css";
+// <<<<<<< HEAD
 import {Button, Navbar, Nav, NavDropdown, Form, FormControl} from 'react-bootstrap'
 
 function App() {
@@ -26,24 +27,12 @@ function App() {
       <Button variant="outline-success">Search</Button>
     </Form>
   </Navbar.Collapse>
-</Navbar>
+  </Navbar>
     <div>Test</div>
     <Button>This is a button</Button>
     </>
   )
-}
+} 
 
-// class App extends Component {
-//   render() {
-//     return (
-//       <div>
-//       <Jumbotron>
-//         <h1>parcel.</h1>
-//         <p>ship more for less</p>
-//       </Jumbotron>
-//       </div>
-//     )
-//   }  
-// }
 
 export default App;
