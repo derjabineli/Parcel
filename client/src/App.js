@@ -14,6 +14,7 @@ function App() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
+          <img src={logo} fluid/>
           <Nav.Link href="#home">Parcel</Nav.Link>
         </Nav>
       </Navbar.Collapse>
