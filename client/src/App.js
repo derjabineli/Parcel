@@ -1,13 +1,31 @@
 /* eslint-disable react/prefer-stateless-function */
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./App.css";
 // <<<<<<< HEAD
 import {Button, Navbar, Nav, Form, Row, Col, Image, Container} from 'react-bootstrap'
 // import boxes from './boxes.png'
 import logo from './ARLOR.png'
 import measure from './measure.png'
+import axios from "axios";
 
 function App() {
+
+  const [formData, setFormData] = useState({});
+
+  const handleSubmit = async (event) => {
+    console.log(formData);
+    try {
+      const result = await axios({method: "POST", url: "/api/package", data: formData });
+      console.log(result);
+    } catch(error) {
+      console.log(error);
+    }
+  }
+
+  const handleInputChange = (event) => {
+    setFormData({...formData, [event.target.name]: event.target.value});
+  }
+
   return (
     <>
     <Navbar bg="light" expand="lg" >
@@ -63,7 +81,7 @@ function App() {
             <Form.Group controlId="formGridAddress1">
               <h1>From:</h1>
               <Form.Label>Address</Form.Label>
-              <Form.Control placeholder="1234 Main St" />
+              <Form.Control name="address1" onChange={(e) => handleInputChange(e)} placeholder="1234 Main St" />
             </Form.Group>
 
             <Form.Group controlId="formGridAddress2">
@@ -74,12 +92,12 @@ function App() {
             <Form.Row>
               <Form.Group as={Col} controlId="formGridCity">
                 <Form.Label>City</Form.Label>
-                <Form.Control />
+                <Form.Control name="city1" onChange={(e) => handleInputChange(e)} />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridState">
                 <Form.Label>State</Form.Label>
-                <Form.Control as="select" defaultValue="Choose...">
+                <Form.Control name="state1" onChange={(e) => handleInputChange(e)} as="select" defaultValue="Choose...">
                   <option>Choose...</option>
                   <option>AL</option>
                   <option>AK</option>
@@ -136,7 +154,7 @@ function App() {
 
               <Form.Group as={Col} controlId="formGridZip">
                 <Form.Label>Zip</Form.Label>
-                <Form.Control />
+                <Form.Control name="zip1" onChange={(e) => handleInputChange(e)} />
               </Form.Group>
             </Form.Row>
           </Form>
@@ -146,7 +164,7 @@ function App() {
             <Form.Group controlId="formGridAddress1">
             <h1>To:</h1>
               <Form.Label>Address</Form.Label>
-              <Form.Control placeholder="1234 Main St" />
+              <Form.Control name="address2" onChange={(e) => handleInputChange(e)} placeholder="1234 Main St" />
             </Form.Group>
 
             <Form.Group controlId="formGridAddress2">
@@ -157,12 +175,12 @@ function App() {
             <Form.Row>
               <Form.Group as={Col} controlId="formGridCity">
                 <Form.Label>City</Form.Label>
-                <Form.Control />
+                <Form.Control name="city2" onChange={(e) => handleInputChange(e)} />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridState">
                 <Form.Label>State</Form.Label>
-                <Form.Control as="select" defaultValue="Choose...">
+                <Form.Control name="state2" onChange={(e) => handleInputChange(e)} as="select" defaultValue="Choose...">
                   <option>Choose...</option>
                   <option>AL</option>
                   <option>AK</option>
@@ -219,13 +237,13 @@ function App() {
 
               <Form.Group as={Col} controlId="formGridZip">
                 <Form.Label>Zip</Form.Label>
-                <Form.Control />
+                <Form.Control name="zip2" onChange={(e) => handleInputChange(e)} />
               </Form.Group>
             </Form.Row>
           </Form>
         </Col>
       </Row>
-      <Button variant="primary" type="submit">  Submit </Button>
+      <Button onClick={(e) => {handleSubmit(e)}} variant="primary" type="submit">  Submit </Button>
     </Container>
   
     </>
