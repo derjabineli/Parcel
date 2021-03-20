@@ -16,11 +16,10 @@ router.get("/api/carrier", async function (req, res, next) {
 
 
 router.post("/api/package", async (req, res) => {
-    console.log(req.body);
     try {
         const result = await Package.create(req.body);
         res.json(result);
-    } catch(error) {
+    } catch (error) {
         console.log(error);
     }
 })
@@ -28,7 +27,7 @@ router.post("/api/package", async (req, res) => {
 // Post get estimate ***
 router.get("/api/estimate", async function (req, res, next) {
     const { postal_to, postal_from } = req.body;
-    
+
     try {
         const { data } = await axios.post(
             "https://api.shipengine.com/v1/rates/estimate",
@@ -38,7 +37,7 @@ router.get("/api/estimate", async function (req, res, next) {
                 "from_postal_code": postal_from,
                 "to_country_code": "US",
                 "to_postal_code": postal_to,
-    
+
                 "weight": {
                     "value": 0,
                     "unit": "pound"
@@ -60,7 +59,7 @@ router.get("/api/estimate", async function (req, res, next) {
             }
         );
         res.json(data);
-    } catch(error) {
+    } catch (error) {
         console.log(error);
     }
 });
