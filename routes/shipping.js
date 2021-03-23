@@ -25,43 +25,27 @@ router.post("/api/package", async (req, res) => {
 })
 
 // Post get estimate ***
-router.get("/api/estimate", async function (req, res, next) {
-    const { postal_to, postal_from } = req.body;
+router.post("/api/estimate", async function (req, res, next) {
 
-    try {
-        const { data } = await axios.post(
-            "https://api.shipengine.com/v1/rates/estimate",
-            {
-                "carrier_id": "se-28529731",
-                "from_country_code": "US",
-                "from_postal_code": postal_from,
-                "to_country_code": "US",
-                "to_postal_code": postal_to,
+    console.log(req.body)
 
-                "weight": {
-                    "value": 0,
-                    "unit": "pound"
-                },
-                "dimensions": {
-                    "unit": "inch",
-                    "length": 0,
-                    "width": 0,
-                    "height": 0
-                },
-                "confirmation": "none",
-                "address_residential_indicator": "unknown",
-                "ship_date": "2018-09-23T15:00:00.000Z"
-            },
-            {
-                headers: {
-                    "API-Key": "TEST_x35d9QOd3kSHxFVMFgWPKi5E/ZZHKF7VRqNiFik0uaw"
-                }
-            }
-        );
-        res.json(data);
-    } catch (error) {
-        console.log(error);
-    }
+    var raw = JSON.stringify({ "carrier_ids": ["se-123890"], "from_country_code": "US", "from_postal_code": req.body.zip1, "to_country_code": "US", "to_postal_code": req.body.zip2, "to_city_locality": req.body.address2, "to_state_province": req.body.state2, "weight": { "value": 1, "unit": "ounce" }, "dimensions": { "unit": "inch", "length": 5, "width": 5, "height": 5 }, "confirmation": "none", "address_residential_indicator": "no" });
+
+    var requestOptions = {
+        method: 'POST',
+        headers: {
+            "Host": "api.shipengine.com",
+            "API-Key": "TEST_x35d9QOd3kSHxFVMFgWPKi5E/ZZHKF7VRqNiFik0uaw",
+            "Content-Type": "application/json"
+        },
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch("https://api.shipengine.com/v1/rates/estimate", requestOptions)
+        .then(response => res.json(response))
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
 });
 
 module.exports = router;
