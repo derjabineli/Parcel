@@ -12,9 +12,9 @@ app.use((req, res, next) => {
   next();
 });
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/parcel", {
-  useNewUrlParser: true
-}).then(() => console.log("MongoDB connected..."))
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/parcel", 
+  {useNewUrlParser: true, useUnifiedTopology: true}
+  ).then(() => console.log("MongoDB connected..."))
   .catch(err => console.log(err));
 
 // Serve up static assets (usually on heroku)

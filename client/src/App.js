@@ -20,7 +20,8 @@ function App() {
     } catch (error) {
       console.log(error);
     }
-  }
+  //   this.props.history.push('/dashboard')
+  // }
 
   const handleInputChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
