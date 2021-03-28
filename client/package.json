@@ -2,10 +2,11 @@
   "name": "mern",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "node-fetch": "^2.6.1",
     "react": "^16.6.3",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^16.6.3",
