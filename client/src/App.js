@@ -6,7 +6,7 @@ import { Button, Navbar, Nav, Form, Row, Col, Image, Container } from 'react-boo
 // import boxes from './boxes.png'
 import logo from './ARLOR.png'
 import measure from './measure.png'
-import axios from "axios";
+import axios from "axios"
 
 function App() {
 
@@ -20,8 +20,8 @@ function App() {
     } catch (error) {
       console.log(error);
     }
-  //   this.props.history.push('/dashboard')
-  // }
+    //   this.props.history.push('/dashboard')
+  }
 
   const handleInputChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -250,6 +250,5 @@ function App() {
     </>
   )
 }
-
 
 export default App;
