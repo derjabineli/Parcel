@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/parcel",
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("parcel/client/build"));
 }
 
 const apiRoutes = require("./routes/shipping");
