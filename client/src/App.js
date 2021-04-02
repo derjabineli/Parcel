@@ -2,11 +2,13 @@
 import React, { useState } from "react";
 import "./App.css";
 // <<<<<<< HEAD
-import { Button, Navbar, Nav, Form, Row, Col, Image, Container } from 'react-bootstrap'
-// import boxes from './boxes.png'
+import { Button, Navbar, Nav, Form, Row, Col, Image, Container,form,label} from 'react-bootstrap'
 import logo from './ARLOR.png'
 import measure from './measure.png'
 import axios from "axios"
+// NOT SURE IF THIS HOW YOU LINK THEM?
+// import "./App.css"
+// import "./component/create-user-component.js";
 
 function App() {
 
@@ -33,12 +35,16 @@ function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Image src={logo} fluid style={{ height: '75px' }} />
+            <Image src={logo} fluid style={{ height: '75px' }}/>
           </Nav>
+          <nav-link>
+           <li class="nav-link">
+             <a class="nav-link active" aria-current="page" href="./com ">log-in</a>
+            </li>
+          </nav-link>
         </Navbar.Collapse>
       </Navbar>
       <br></br>
-      {/* <Image src={boxes}  fluid style={{ width: '100%', height:'100%'}}/> */}
       <Container>
         <h1>Package Info:</h1>
         <Row>
