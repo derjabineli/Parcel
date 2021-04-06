@@ -9,6 +9,22 @@ h1{
 
 .nav-link{
   font-weight: bolder;
-  font-size: larger;
+  font-size: medium;
   float: right;
+}
+label{
+  font-weight: bolder;
+}
+#login{
+  margin: 10px;
+}
+input:hover{
+  color:black;
+}
+a:hover {
+  opacity: 0.8;
+  color: green;
+} 
+Button:hover{
+  color: green;
 }
