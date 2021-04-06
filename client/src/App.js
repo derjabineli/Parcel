@@ -38,9 +38,16 @@ function App() {
             <Image src={logo} fluid style={{ height: '75px' }}/>
           </Nav>
           <nav-link>
-           <li class="nav-link">
-             <a class="nav-link active" aria-current="page" href="./com ">log-in</a>
-            </li>
+            <Container >
+              <label>Username</label>
+              <input id="login"></input>
+              <label>Password</label>
+              <input id="login"></input>
+              <li class="nav-link">
+                <a class="nav-link active" aria-current="page" href="./com ">Log-in</a>
+                <a class="nav-link active" aria-current="page" href="./com ">Sign-up</a>
+               </li>
+            </Container>
           </nav-link>
         </Navbar.Collapse>
       </Navbar>
